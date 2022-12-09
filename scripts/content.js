@@ -22,7 +22,18 @@ const createButtonContainer = (jobId) => {
 	return buttonContainer;
 }
 
-const jobs = [...document.getElementsByClassName('m-jobsList__item')];
+const proceedJobs = () => {
+	const jobs = [...document.getElementsByClassName('m-jobsList__item')];
+	jobs.forEach(async (jobCard) => {
+		const jobId = jobCard.getAttribute('data-gtm-item-id');
+		jobCard.setAttribute(DATA_KEY, jobId);
+		await chrome.storage.sync.get(STORAGE_KEY, (data) => {
+			const blacklist = data[STORAGE_KEY] || [];
+			const isBlacklisted = blacklist.includes(jobId);
+			renderJob(jobId, !isBlacklisted, jobCard);
+		})
+	})
+}
 
 const switchElementsVisibility = (elements, visible) => {
 	elements.forEach((element) => element.style.display = visible ? 'unset' : 'none')
@@ -61,6 +72,7 @@ const renderButton = (jobCard, jobId, visible) => {
 }
 const renderJob = (jobId, visible, jobCard) => {
 	if (!jobCard) jobCard = document.querySelector(`[${DATA_KEY}="${jobId}"]`);
+
 	const wrap = [...jobCard.getElementsByClassName('m-jobsListItem__wrap')];
 	switchElementsVisibility(wrap, visible);
 	const snippet = [...jobCard.getElementsByClassName('m-jobsListItem__snippet')];
@@ -88,20 +100,11 @@ const removeFromBlacklist = (jobId) => {
 		blacklist = blacklist.filter((id) => id !== jobId);
 		chrome.storage.sync.set({[STORAGE_KEY]: blacklist});
 	});
-	console.log('Removed from blacklist');
-	chrome.storage.sync.get(STORAGE_KEY, (data) => {
-		console.log(data[STORAGE_KEY]);
-	}	);
 	renderJob(jobId, true);
 }
 
-jobs.forEach(async (jobCard) => {
-	const jobId = jobCard.getAttribute('data-gtm-item-id');
-	jobCard.setAttribute(DATA_KEY, jobId);
-	await chrome.storage.sync.get(STORAGE_KEY, (data) => {
-		const blacklist = data[STORAGE_KEY] || [];
-		const isBlacklisted = blacklist.includes(jobId);
-		renderJob(jobId, !isBlacklisted, jobCard);
-	})
+const jobListContainer = document.getElementsByClassName('c-jobsSearch__jobsSearchList')[0];
+const observer = new MutationObserver(proceedJobs);
+jobListContainer && observer.observe(jobListContainer, {childList: true});
 
-})
+proceedJobs();

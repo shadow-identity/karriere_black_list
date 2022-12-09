@@ -1,9 +1,33 @@
 {
   "manifest_version": 3,
   "name": "Blacklist Karriere",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "author": "Pavel Nedrigailov",
   "description": "Hide unwanted jobs from one of the most popular job search engines in Austria",
-
+  "action": {
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "24": "images/icon-24.png",
+      "32": "images/icon-32.png"
+    },
+    "theme_icons": [
+      {
+        "light": "images/icon-16.png",
+        "dark": "images/icon-16-dark-theme.png",
+        "size": 16
+      },
+      {
+        "light": "images/icon-24.png",
+        "dark": "images/icon-24-dark-theme.png",
+        "size": 24
+      },
+      {
+        "light": "images/icon-32.png",
+        "dark": "images/icon-32-dark-theme.png",
+        "size": 32
+      }
+    ]
+  },
   "permissions": [
     "storage"
   ],
@@ -20,7 +44,7 @@
         "scripts/content.js"
       ],
       "matches": [
-        "https://www.karriere.at/jobs/*"
+        "https://www.karriere.at/jobs*"
       ]
     }
   ]

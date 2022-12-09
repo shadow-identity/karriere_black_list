@@ -16,7 +16,6 @@ const STORAGE_KEY = 'FGSFDS-BLACKLIST';
 const DATA_KEY = `data-${STORAGE_KEY.toLowerCase()}`;
 const generateBlackListId = (jobId) => `${STORAGE_KEY}-${jobId}`;
 const generateButtonId = (jobId) => `button-${generateBlackListId(jobId)}`;
-const generateJobContainerId = (jobId) => `container-${generateBlackListId(jobId)}`;
 const createButtonContainer = (jobId) => {
 	const buttonContainer = document.createElement('div');
 	buttonContainer.id = generateButtonId(jobId);
@@ -26,7 +25,7 @@ const createButtonContainer = (jobId) => {
 const jobs = [...document.getElementsByClassName('m-jobsList__item')];
 
 const switchElementsVisibility = (elements, visible) => {
-	elements.forEach((element) => element.style.display = visible ? 'visible' : 'none')
+	elements.forEach((element) => element.style.display = visible ? 'unset' : 'none')
 }
 
 const renderButton = (jobCard, jobId, visible) => {

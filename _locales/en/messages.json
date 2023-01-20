@@ -1,0 +1,26 @@
+{
+  "extension_description": {
+    "message": "Hide unwanted jobs from one of the most popular job search engines in Austria",
+    "description": "For manifest"
+  },
+  "extension_readme": {
+    "message": "Make your favorite job searching portal even better!\n\nSometimes it is annoying to see the same unsuitable jobs every time you press the \"Jobs finden\" button. \n\nThe extension adds a \"Hide\" button to job listing items, allowing you to flag jobs that you are not interested in. After you click the button, the selected item will change its appearance in the search results to gray and with less detail.\n\nAll the results are still visible, even marked. You can switch the job back to a normal state whenever you want.\n\nFeedback is appreciated.\n\nThe extension doesn't collect and doesn't transfer any data. However, if you log in into your browser, it can synchronize a list of your hidden jobs between different devices with your accounts on its own.\n\nThanks https://openmoji.org/ for an icon I used in this extension.",
+    "description": "Description in the store page"
+  },
+  "button_hide_label": {
+    "message": "\uD83D\uDDD1 Hide",
+    "description": "Button to hide a job"
+  },
+  "button_hide_description": {
+    "message": "Add to black list",
+    "description": ""
+  },
+  "button_show_label": {
+    "message": "\uD83D\uDC41 Show",
+    "description": ""
+  },
+  "button_show_description": {
+    "message": "Remove from black list",
+    "description": ""
+  }
+}

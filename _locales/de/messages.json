@@ -1,0 +1,26 @@
+{
+  "extension_description": {
+    "message": "Verstecke unerwünschte Jobs von einer der beliebtesten Jobbörsen in Österreich.",
+    "description": "For manifest"
+  },
+  "extension_readme": {
+    "message": "Mach deine Lieblingsjobbörse noch besser!\n\nManchmal ist es störend, dieselben unpassenden Jobs immer wiederzusehen, wenn auf den „Jobs finden“ Knopf drückt.\n\nDiese Erweiterung fügt einen „Verbergen“ Knopf zu allen Stellenanzeigen hinzu und erlaubt dir Jobs, an denen du nicht interessiert bist, einfach zu markieren.\nNachdem du sie mit dem Knopf markiert hast, ändern sie ihr Aussehen und erscheinen ausgegraut und mit weniger Details.\n\nAlle Ergebnisse sind weiterhin sichtbar, selbst wenn sie markiert sind und du kannst die Markierung jederzeit wieder rückgängig machen.\n\nFeedback wird sehr geschätzt.\n\nDiese Erweiterung sammelt weder ihre Daten, noch leitet sie Daten weiter.\nJedoch ist sie in der Lage eine Liste mit allen markierten Jobs zwischen verschiedenen Geräten, auf denen sie mit demselben Account angemeldet sind, zu synchronisieren.\n\nVielen Dank an https://openmoji.org/ für das Icon, das in dieser App verwendet wird.",
+    "description": "Description in the store page"
+  },
+  "button_hide_label": {
+    "message": "\uD83D\uDDD1 Verbergen",
+    "description": "Button to hide a job"
+  },
+  "button_hide_description": {
+    "message": "Auf die schwarze Liste setzen",
+    "description": ""
+  },
+  "button_show_label": {
+    "message": "\uD83D\uDC41 Anzeigen",
+    "description": ""
+  },
+  "button_show_description": {
+    "message": "Von der schwarzen Liste entfernen",
+    "description": ""
+  }
+}

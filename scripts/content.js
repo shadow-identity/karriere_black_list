@@ -43,8 +43,12 @@ const renderButton = (jobCard, jobId, visible) => {
 	const actionsContainer = jobCard.getElementsByClassName('m-jobsListItem__userActionContainer')[0];
 	if (!actionsContainer) return;
 
-	const buttonText = visible ? '🗑 Hide' : '👁 Show';
-	const buttonLabel = visible ? 'Add to black list' : 'Remove from black list';
+	const buttonText = chrome.i18n.getMessage(
+		visible ? 'button_hide_label' : 'button_show_label'
+	);
+	const buttonLabel = chrome.i18n.getMessage(
+		visible ? 'button_hide_description' : 'button_show_description'
+	);
 
 	const buttonHtml = `
 		<div class="m-jobsListItem__watchlistContainer">
